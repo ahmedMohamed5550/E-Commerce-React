@@ -1,16 +1,20 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar.jsx'
-import Slider from './components/Slider.jsx'
-import ProductList from './components/ProductList.jsx';
+import Home from './components/Home.jsx'
+import About from './components/About.jsx'
+import { Routes, Route } from "react-router";
+import ProductDetails from './components/ProductDetails.jsx'
 
 function App() {
-
   return (
     <div className="App">
       <Navbar />
-      <Slider />
-      <ProductList/>
+      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/products/:id" element={<ProductDetails />} />
+      </Routes>
     </div>
   );
 }
